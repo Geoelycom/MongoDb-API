@@ -36,9 +36,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author**
 
-- GitHub: [@githubhandle](https://github.com/Geoelycom)
-- Twitter: [@twitterhandle](https://twitter.com/Ely_codes)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/https://www.linkedin.com/in/ekenimoh-elyan/)
+- GitHub: (https://github.com/Geoelycom)
+- Twitter: (https://twitter.com/Ely_codes)
+- LinkedIn: (https://linkedin.com/in/https://www.linkedin.com/in/ekenimoh-elyan/)
 
 ## 🤝 Contributing
 
