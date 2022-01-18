@@ -34,12 +34,13 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
-👤 **Author**
+## Author
 
-- GitHub: (https://github.com/Geoelycom)
-- Twitter: (https://twitter.com/Ely_codes)
-- LinkedIn: (https://linkedin.com/in/https://www.linkedin.com/in/ekenimoh-elyan/)
+👤 **Ekenimoh Elyan (Geo)**
 
+- GitHub:[@Geoelycom](https://github.com/Geoelycom)
+- Twitter: [@Ely_codes](https://twitter.com/Ely_codes)
+- LinkedIn: [Ekenimoh Elyan](https://www.linkedin.com/in/Ekenimoh_sumaila-elyan/)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
