@@ -1,7 +1,7 @@
 
 # MongoDB API
 
-> One paragraph statement about the project.
+> A Simple Mockup challenge using Mongodb to create a Schema for collections of users, and user Interests. Generated report written to an Excel File. documented using Postman
 
 Additional description about the project and its features.
 
@@ -34,21 +34,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Deployment
 
+👤 **Author**
 
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Geoelycom)
+- Twitter: [@twitterhandle](https://twitter.com/Ely_codes)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/https://www.linkedin.com/in/ekenimoh-elyan/)
 
 ## 🤝 Contributing
 
