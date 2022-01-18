@@ -1,7 +1,7 @@
 
 # MongoDB API
 
-> A Simple Mockup challenge using Mongodb to create a Schema for collections of users, and user Interests. Generated report written to an Excel File. documented using Postman
+> A Simple Mockup challenge using Mongodb to create a Schema for collections of users,user Interests and Tasks. Generated report written to an Excel File. documented using Postman
 
 Additional description about the project and its features.
 
