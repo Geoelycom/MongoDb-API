@@ -56,16 +56,3 @@ exports.profile = function(req, res, next){
 
 /// Creating a Report that returns an excel file
 
-
-
-
-
-
-
-/**  
- 
-User.aggregate([{
-    $match: {users: '_id', userInterests: 'interest' }
-  }])
-
- * */

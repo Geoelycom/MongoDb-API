@@ -7,8 +7,8 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Javascript
-- MongoDB
+- Javascript, Node.js
+- MongoDB, Express.js
 - PostMan
 
 ## Live Demo
@@ -17,22 +17,16 @@ Additional description about the project and its features.
 
 
 ## Getting Started
-
-
-
 To get a local copy up and running follow these simple example steps.
+- Open terminal
+- Clone this project by command git clone https://github.com/Geoelycom/MongoDb-API.git
 
 ### Prerequisites
-
-### Setup
-
-### Install
+- IDE to edit and run the code (I've used Visual Studio Code 🔥).
 
 ### Usage
 
-### Run tests
-
-### Deployment
+For anyone who wants to practice  how to create RestFulApi's with Mongodb,Node.js and Express
 
 ## Author
 
@@ -52,10 +46,7 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Inspiration.. Eyeora Code challenge
 
 ## 📝 License
 
