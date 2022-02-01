@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
- //require('../models/users')
-  const User = mongoose.model('User')
+const User = mongoose.model('User');
+
+
+
 
 //Register New user
 exports.register = function(req, res){
   const newUser = new User(req.body);
+  console.log(newUser)
   newUser.hash_password = bcrypt.hashSync(req.body.password, 10);
   newUser.save(function(err, user){
     if (err){
@@ -16,9 +19,26 @@ exports.register = function(req, res){
     } else {
     user.hash_password = undefined;
     return res.json(user)
+    
     }
   })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /// Getting User with MongoDb aggregation Pipeline.(Task one)
 exports.sign_in = function(req, res){
@@ -33,6 +53,10 @@ exports.sign_in = function(req, res){
   }])
 };
 
+
+
+
+
 /// Adding authentication to login
 exports.LoginRequired = function(req, res, next){
   if (req.user){
@@ -41,6 +65,11 @@ exports.LoginRequired = function(req, res, next){
     return res.status(401).json({message: 'Unauthorized user!!'});
   }
 };
+
+
+
+
+
 
 // Create User profile
 
@@ -53,6 +82,8 @@ exports.profile = function(req, res, next){
      return res.status(401).json({ message: 'Invalid token'})
   }
 };
+
+// mongosh "mongodb+srv://userproifle.g0qgd.mongodb.net/myFirstDatabase" --username Elyan
 
 /// Creating a Report that returns an excel file
 

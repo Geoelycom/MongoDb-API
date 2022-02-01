@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require("mongoose");
-const routes = require('./api/route/userRoute')
 const bodyParser = require("body-parser");
  User = require('./api/models/users')
 const jsonwebtoken = require("jsonwebtoken")
@@ -16,7 +15,6 @@ const options = {
   socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
   family: 4 // Use IPv4, skip trying IPv6
 };
-
 
 
 mongoose.connect( 'mongodb+srv://Elyan: ' + process.env.DB_URI + '@userproifle.g0qgd.mongodb.net/?retryWrites=true&w=majority', options).then(function(){
@@ -49,12 +47,18 @@ if (req.headers && req.headers.authorization && req.headers.authorization.split(
 });
 
 
+// user can write request to the database without asking for permision from forum
+// agregation comes into play when a user can't replicate post request.
+// user login is saved automatically each time they access api client once.
+
+
+
+const routes = require('./api/route/userRoute')
 routes(app);
 
-app.use(function(req, res){
-  res.status(404).send({ url: req.originalUrl + 'not found' })
-})
-
+// app.use(function(req, res){
+//   res.status(404).send({ url: req.originalUrl + 'not found' })
+// })
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)
