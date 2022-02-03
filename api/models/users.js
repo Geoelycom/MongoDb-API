@@ -6,7 +6,6 @@ const { Schema } = mongoose;
 /** User Schema Defination */
 
 const userSchema = new Schema({
-  users: {
     name: {
       type: String,
       trim: true,
@@ -26,13 +25,12 @@ const userSchema = new Schema({
   },
     Token: {
       type: String,
-      required: true
+      //required: true
     },
     profilePicture: {
       type: Buffer,
-      required: true
-    }
-  },
+      //required: true
+    },
 
   userInterests: {
     userId: ObjectId,
@@ -48,10 +46,9 @@ const userSchema = new Schema({
   }
 })
 
-userSchema.methods.comparePassword = function(password){
-  return bcrypt.compareSync(password, this.hash_password);
+userSchema.methods.comparePassword = hash_password => {
+  return bcrypt.compareSync(hash_password, this.hash_password);
 }
 
 module.exports = mongoose.model('User', userSchema )
-
 

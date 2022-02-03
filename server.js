@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
- User = require('./api/models/users')
-const jsonwebtoken = require("jsonwebtoken")
+User = require('./api/models/users')
+//const jsonwebtoken = require("jsonwebtoken")
 // Basic Configuration
 const port = process.env.PORT || 5000;
 
@@ -36,7 +36,8 @@ app.use(bodyParser.json());
 app.use(function (req, res, next){
 if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT'){
   jsonwebtoken.verify(req.headers.authorization.split(' ')[1], 'RestfulApis', function(err, decode){
-    if (err) req.user = undefined;
+    //made changes
+    if (err) req.User = undefined;
     req.user = decode;
     next()
   });
@@ -46,19 +47,13 @@ if (req.headers && req.headers.authorization && req.headers.authorization.split(
 } 
 });
 
-
-// user can write request to the database without asking for permision from forum
-// agregation comes into play when a user can't replicate post request.
-// user login is saved automatically each time they access api client once.
-
-
-
 const routes = require('./api/route/userRoute')
 routes(app);
 
 // app.use(function(req, res){
 //   res.status(404).send({ url: req.originalUrl + 'not found' })
 // })
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`)

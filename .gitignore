@@ -2,4 +2,4 @@
 nodemon.json
 .env
 *.log
-/
+*.zip

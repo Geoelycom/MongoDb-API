@@ -1,33 +1,31 @@
 'use strict'
-const app = require('../../server.js');
 const mongoose = require('mongoose')
-const User = mongoose.model('User')
-//const User = require('../models/users')
-const { register, sign_in, LoginRequired, profile } = require('../controllers/userController');
+const app = require('../../server.js');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const User = mongoose.model('User');
+//const Users = require('../models/users')
 
-module.exports = function(app){
-  app.route('/auth/register', (req, res, next) => {
-    res.send('hello world')
-    const user = new User({
-   email: req.body.email,
-   password: req.body.password,
-   name: req.body.name
- })
-   res.send(user)
+
+
+//const { register, sign_in, LoginRequired, profile} = require('../controllers/userController');
+
+module.exports = function (app) {
+  app.post('/auth/register', (req, res, next) => {
+    const newUser =  new User ({
+      email: req.body.email,
+      name: req.body.name,
+      hash_password: req.body.password
+    })
+    newUser.save().then(result => {console.log(result)})
+    .catch(err => console.log(err))
+    res.status(201).json({
+      message: 'Handling POST request to /auth/register',
+      createdUser: newUser
+    })
     next()
-  })
- .post(register)
-}
-
-
-
-
-
-
-
-
-
-
+    });
+  }
 
 
 
@@ -38,11 +36,15 @@ module.exports = function(app){
 
 // module.exports = function(app){
 //   const handleUser = require('../controllers/userController.js')
-//   router.post('auth/register', (req, res, next) =>{
+//   app.route('/auth/register', (req, res, next) =>{
 //     const user = new User({
-
+//       email: req.body.email,
+//       name: req.body.name,
+//       password: req.body.password
 
 //     })
+//     res.send(user)
+//     //.post(user)
 //     next()
 //     })
 
@@ -51,7 +53,21 @@ module.exports = function(app){
 
 
 
+/****  
+ app.post('/auth/register', (req, res, next) => {
+    const user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+      
+    });
+    user.save(function (err, user){
 
+    })
+    res.send(user)
+    next()
+ 
+ ***/
 
 
 
@@ -64,16 +80,17 @@ module.exports = function(app){
 /// another way of handling router
 
 
-/***  
- * 
+
   //get users
-  app.route('auth/register')
-  .post(handleUser.register)
 
-  app.route('/auth/sign_in')
-  .post(handleUser.sign_in);
+// module.exports = function(app) {
+//   app.route('/auth/register')
+//   .post(register)
 
-  app.route('/user')
-  .post(handleUser.LoginRequired, () =>  handleUser.user)
+  // app.route('/auth/sign_in')
+  // .post(sign_in);
 
- *** */
+//   app.route('/user')
+//   .post(handleUser.LoginRequired, () =>  handleUser.user)
+ //}
+  
